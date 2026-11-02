@@ -1,0 +1,33 @@
+{
+"title": "Set up and customize WoodFurn",
+"intro": "This frame sits outside the breakpoints, so it never shows on your published site. WoodFurn ships connected to our demo Shopify store, with a test checkout that takes no payment. Part 1 connects your own store. Parts 2 to 4 show where each setting lives: the CMS, the store components and the design. The lime outlines in each screenshot mark what to click. Delete this frame when you're done.",
+"parts": [
+ {"name": "Part 1. Connect your Shopify store", "steps": [
+  ["Open the Framerfy plugin", "Click the Framer menu at the top left (it reads Canvas), then Plugins → Browse all. Search for Framerfy and press Enter. After the first run it's listed under Recents in the same menu.", "s01-plugin-search"],
+  ["Sign in or create an account", "Sign in with your Framerfy email and password. New to Framerfy? Click Sign Up and enter your full name and email. Framerfy emails you a code. Enter it with a password to finish. The plugin is free and imports every product in your store.", "s02-plugin-signin"],
+  ["Get a Storefront token from Shopify", "In Shopify admin, open Settings → Apps and click Shopify App Store. Install Shopify's Headless app and open it. Click Add storefront, then Manage next to Storefront API. Turn on read access for products, collections, checkouts and customers, and copy the Public access token. Your store domain is the your-store.myshopify.com address under Settings → Domains.", "s03-shopify-apps"],
+  ["Add your store to Framerfy", "In the plugin, click the gear on the Active store card. On Select Store, click Connect New Store. That opens the Framerfy dashboard at admin.framerfy.ae. Sign in, click + Add Store, enter a store name (only you see it), your store domain and the Public access token, and click Save.", "s04-plugin-home"],
+  ["Select your store", "Back in Framer, open the plugin and click the gear again. Your new store is now in the list. Select it and click Continue. The plugin saves your store's details in the site's custom code, and the cart and checkout components read them from there.", "s04b-select-store"]
+ ]},
+ {"name": "Part 2. Products in the CMS", "steps": [
+  ["Sync your products", "Open the Framer menu → CMS. Under Synced, select the Framerfy collection. Click Sync, the circular arrow above the table, to pull products, variants, prices and images from your store. Manage, next to it, picks which Shopify fields come in. Sync again whenever you change products in Shopify.", "s05-cms"],
+  ["How the pages read the CMS", "The product page is a CMS page for the Framerfy collection. Find it in the Pages panel under /shop. The shop grid, the six category pages and the home sections read the same collection. Category pages filter on Product Type (Sofa, Chair, Stool, Table), so set Product type in Shopify to match. Tag a product New, Sale or Bestseller in Shopify to show a badge and list it on /collections/new or /collections/sale. The Products collection and the /products page are unused samples you can delete.", "s06-cms-pages"]
+ ]},
+ {"name": "Part 3. Store component settings", "steps": [
+  ["Add to cart", "On the product page, select Add to Cart Button (AI) and look at the right panel. Store Id, ProductId, Product title, Variants and ImageUrls are bound to Framerfy CMS fields, so leave them as they are. After add sets what a click does: Open cart slides out the cart drawer, Show toast shows a short notice instead. Texts holds the labels and Styles the colors and font.", "s07-addtocart"],
+  ["Variant pickers", "Each Variant_Picker shows one Shopify option. Option holds the option name exactly as Shopify spells it, here Size and Assembly. If your products use other options, such as Color, change Option or duplicate a picker. The price and the image gallery follow the chosen variant on their own.", "s08-variant"],
+  ["Switch the checkout to Shopify", "Open Assets → Layout Templates → WoodFurn Layout. In Layers, select Checkout Button (AI) inside Cart Footer (drawer slot). Set Checkout from Demo page to Shopify, then under Store paste your your-store.myshopify.com domain and the Public access token. Shoppers now pay on Shopify's own checkout.", "s11-checkout"],
+  ["Turn off the demo pages", "With Shopify checkout on, the demo pages aren't needed. In the Pages panel, delete /checkout, /order-confirmed and /my-orders. Delete the Demo Checkout Notice under Add to cart on the product page and the one above Checkout in the cart drawer. Then point both My Orders links in WoodFurn Layout, in the header and in the phone menu, at https://shopify.com/<your-shop-id>/account. Shopify admin shows that link under Settings → Customer accounts.", "s12-pages"]
+ ]},
+ {"name": "Part 4. Brand, content and SEO", "steps": [
+  ["Colors and fonts", "Open Assets. Text Styles hold every heading and body size. Colors hold the palette: Ink for text and buttons, Lime for highlights, Card Grey for panels, Sale Red and New Green for badges. Edit a style once and every page updates. The store components keep their own colors under Styles in their settings, so set those to match.", "s13-styles"],
+  ["Header, footer and social links", "The header, the cart drawer and the footer live in WoodFurn Layout, so one edit covers every page. Change the logo text, menus and newsletter copy there. Under Follow in the footer, X and LinkedIn link to The Design MVP, and Instagram, Pinterest, TikTok and YouTube have no link yet. Swap in your own.", "s10-layout"],
+  ["Home hero and sale banner", "On Home, select Hero Slideshow. Content lists the three slides, which sit on the canvas as Hero Slide 1, 2 and 3. Change each slide's photo, headline and button there. Interval sets the seconds per slide. The countdown in the end-of-season sale banner runs to 1 January 2027. Select it to change the date.", "s16-hero"],
+  ["Site title, favicon and social image", "Open the Framer menu → Settings → General. Replace the WoodFurn title and description. Under Site images, upload your favicon (light and dark), a 1200 × 630 social preview and a 180 × 180 Apple touch icon.", "s15-siteimages"],
+  ["Page titles and descriptions", "Under Page settings in the same view, every page has its own title and description, and they all mention WoodFurn. The product page fills {{Title}} and {{Description}} from the CMS and uses Image 1 as its social image, so there you only change the brand name.", "s14-seo"]
+ ]},
+ {"name": "Part 5. Go live", "steps": [
+  ["Publish and test", "Click Publish. On the live site, add a product to the cart, click Checkout and check that Shopify's checkout opens with your products and prices. Then delete this guide frame.", null]
+ ]}
+]
+}
